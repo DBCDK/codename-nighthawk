@@ -1,5 +1,4 @@
 # codename-nighthawk
-cmdb prototype
 
 Running it:
 * clone it
@@ -22,8 +21,13 @@ paths = {
 ```
 
 This function can now be mapped to an URL in two ways:
-1) implicit mapping, utilizing the paths-attribute of a module (see mountpoint config-option)
-2) explicit mapping (see paths config-option)
+* implicit mapping, utilizing the paths-attribute of a module (see mountpoint config-option)
+* explicit mapping (see paths config-option)
+
+arguments:
+* config: the config-part of a module-configuration is passed as first argument
+* query_params: contains query parameters. Multiple arguments with same name is unsupported (e.g. ?foo=1&foo=2).
+* **kwargs: placeholders from paths will appear here.
 
 
 ## configuration format
