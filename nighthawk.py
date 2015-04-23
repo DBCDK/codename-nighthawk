@@ -43,7 +43,7 @@ def forward_request(callee, mod_config):
         status_code, result = callee(mod_config, request.args.to_dict(), **kwargs)
 
         transformers = {dict: jsonify,
-                        list: lambda r: Response(response=json.dumps(r)),
+                        list: lambda r: Response(response=json.dumps(r), content_type="application/json"),
                         str: lambda r: Response(response=r)}
 
         if type(result) in transformers:
